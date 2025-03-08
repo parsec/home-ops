@@ -84,7 +84,7 @@ spec:
               - name: /dev/disk/by-id/ata-TEAM_T2531TB_TPBF2303010010301157
           - name: hythlodaeus
             devices:
-              - name: sda
+              - name: /dev/disk/by-id/nvme-CT500P2SSD8_2020E2A2E2A8
           - name: hydaelyn
             devices:
               - name: /dev/disk/by-id/nvme-CT2000P1SSD8_20392AB1904B
