@@ -59,7 +59,7 @@ nodes:
               physical: true
         dhcp: false
       - deviceSelector:
-          hardwareAddr: "e0:07:1b:64:10:d0"
+          hardwareAddr: "a0:36:9f:09:0b:3c"
           physical: true
         ignore: true
     patches:
@@ -68,7 +68,7 @@ nodes:
   - hostname: "emet-selch"
     ipAddress: "10.1.0.5"
     installDiskSelector:
-      model: "TEAM T253512GB"
+      size: "512110190592"
     machineSpec:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/2d61dd07b20062062ea671b4d01873506103b67c0f7a4c3fb6cf4ee85585dcb8
