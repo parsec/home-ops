@@ -40,6 +40,8 @@ nodes:
         mtu: 1500
         vip:
           ip: "10.1.0.117"
+    patches:
+      - "@./patches/venat/gpu-worker-patch.yaml"
   - hostname: "emet-selch"
     ipAddress: "10.1.0.5"
     installDiskSelector:
