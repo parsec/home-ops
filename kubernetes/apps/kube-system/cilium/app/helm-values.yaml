@@ -6,7 +6,7 @@ bgpControlPlane:
 envoy:
   enabled: false
 cluster:
-  name: home-cluster
+  name: home-ops
   id: 1
 endpointRoutes:
   enabled: true
