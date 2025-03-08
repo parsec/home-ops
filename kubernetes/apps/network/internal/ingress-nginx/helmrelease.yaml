@@ -73,7 +73,6 @@ spec:
             any: true
       extraArgs:
         default-ssl-certificate: cert-manager/parsec.sh-production-tls
-        publish-status-address: *hostname
       resources:
         requests:
           cpu: 100m
