@@ -28,11 +28,11 @@ spec:
     fullnameOverride: *app
     provider: cloudflare
     env:
-      - name: &name api-token
+      - name: CF_API_TOKEN
         valueFrom:
           secretKeyRef:
             name: external-dns-secret
-            key: *name
+            key: api-token
     extraArgs:
       - --cloudflare-dns-records-per-page=1000
       - --cloudflare-proxied
