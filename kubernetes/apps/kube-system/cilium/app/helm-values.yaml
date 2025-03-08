@@ -1,8 +1,13 @@
 ---
+autoDirectNodeRoutes: true
 bpf:
   masquerade: true
 bgpControlPlane:
   enabled: true
+cgroup:
+  automount:
+    enabled: false
+  hostRoot: /sys/fs/cgroup
 envoy:
   enabled: false
 cluster:
@@ -15,7 +20,7 @@ hubble:
 ipam:
   mode: kubernetes
 ipv4NativeRoutingCIDR: 10.42.0.0/16
-k8sServiceHost: 10.1.0.117
+k8sServiceHost: 127.0.0.1
 k8sServicePort: 7445
 kubeProxyReplacement: true
 kubeProxyReplacementHealthzBindAddr: 0.0.0.0:10256
@@ -53,3 +58,5 @@ rollOutCiliumPods: true
 routingMode: native
 securityContext:
   privileged: true
+socketLB:
+  hostNamespaceOnly: true
