@@ -26,20 +26,19 @@ nodes:
       wwid: "naa.5002538f54711aa4"
     machineSpec:
       secureboot: false
-    talosImageURL: factory.talos.dev/installer/582f7052afa259bd6ec06c800145292c496bb1a5332d9ca54f224e25507c3437
+    talosImageURL: factory.talos.dev/installer/e770ae054f99369321899aef8b1fa5b71ef7075f24d3663da1a115eaac46e537
     controlPlane: true
     networkInterfaces:
-      - interface: br0
+      - deviceSelector:
+          hardwareAddr: "e0:07:1b:64:10:d0"
+          physical: true
         dhcp: false
         addresses:
           - "10.1.0.4/24"
-        bridge:
-          stp:
-            enabled: true
-          interfaces: [bond0]
         routes:
           - network: "0.0.0.0/0"
             gateway: "10.1.0.1"
+        mtu: 1500
         vip:
           ip: "10.1.0.117"
         vlans:
@@ -47,21 +46,39 @@ nodes:
             vlanId: 10
             dhcp: false
             mtu: 1500
-      - interface: bond0
-        bond:
-          mode: active-backup
-          miimon: 100
-          primaryReselect: better
-          updelay: 200
-          downdelay: 200
-          deviceSelectors:
-            - hardwareAddr: "e0:07:1b:64:10:*"
-              physical: true
-        dhcp: false
-      - deviceSelector:
-          hardwareAddr: "a0:36:9f:09:0b:3c"
-          physical: true
-        ignore: true
+      # - interface: br0
+      #   dhcp: false
+      #   addresses:
+      #     - "10.1.0.4/24"
+      #   bridge:
+      #     stp:
+      #       enabled: true
+      #     interfaces: [bond0]
+      #   routes:
+      #     - network: "0.0.0.0/0"
+      #       gateway: "10.1.0.1"
+      #   vip:
+      #     ip: "10.1.0.117"
+      #   vlans:
+      #     - &vlan10
+      #       vlanId: 10
+      #       dhcp: false
+      #       mtu: 1500
+      # - interface: bond0
+      #   bond:
+      #     mode: active-backup
+      #     miimon: 100
+      #     primaryReselect: better
+      #     updelay: 200
+      #     downdelay: 200
+      #     deviceSelectors:
+      #       - hardwareAddr: "e0:07:1b:64:10:*"
+      #         physical: true
+      #   dhcp: false
+      # - deviceSelector:
+      #     hardwareAddr: "a0:36:9f:09:0b:3c"
+      #     physical: true
+      #   ignore: true
     patches:
       - "@./patches/venat/gpu-worker-patch.yaml"
 
@@ -75,7 +92,7 @@ nodes:
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
-          hardwareAddr: "e0:07:1b:70:18:40"
+          hardwareAddr: "7c:69:f6:8f:bd:02"
           physical: true
         dhcp: false
         addresses:
@@ -182,6 +199,7 @@ patches:
   - "@./patches/global/machine-network.yaml"
   - "@./patches/global/machine-sysctls.yaml"
   - "@./patches/global/machine-time.yaml"
+  - "@./patches/global/machine-features.yaml"
 
 # Controller patches
 controlPlane:
