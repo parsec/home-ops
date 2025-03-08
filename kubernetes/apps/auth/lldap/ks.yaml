@@ -18,6 +18,7 @@ spec:
   path: ./kubernetes/apps/auth/lldap/app
   components:
     - ../../../../components/gatus/guarded
+    - ../../../../components/common
   prune: true
   sourceRef:
     kind: GitRepository
