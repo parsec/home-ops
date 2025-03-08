@@ -1,7 +1,7 @@
 ---
 # Note: Gatus vars should be escaped with $${VAR_NAME} to avoid interpolation by Flux
 web:
-  port: $${CUSTOM_WEB_PORT}
+  port: 8080
 storage:
   type: sqlite
   path: /config/sqlite.db
