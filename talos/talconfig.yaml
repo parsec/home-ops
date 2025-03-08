@@ -28,7 +28,6 @@ nodes:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/582f7052afa259bd6ec06c800145292c496bb1a5332d9ca54f224e25507c3437
     controlPlane: true
-    nameservers: &nameservers ["1.1.1.1","1.0.0.1"]
     networkInterfaces:
       - interface: br0
         dhcp: false
@@ -43,6 +42,11 @@ nodes:
             gateway: "10.1.0.1"
         vip:
           ip: "10.1.0.117"
+        vlans:
+          - &vlan10
+            vlanId: 10
+            dhcp: false
+            mtu: 1500
       - interface: bond0
         bond:
           mode: active-backup
@@ -69,7 +73,6 @@ nodes:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/2d61dd07b20062062ea671b4d01873506103b67c0f7a4c3fb6cf4ee85585dcb8
     controlPlane: true
-    nameservers: *nameservers
     networkInterfaces:
       - deviceSelector:
           hardwareAddr: "e0:07:1b:70:18:40"
@@ -83,6 +86,8 @@ nodes:
         mtu: 1500
         vip:
           ip: "10.1.0.117"
+        vlans:
+        - *vlan10
 
   - hostname: "hythlodaeus"
     ipAddress: "10.1.0.6"
@@ -92,30 +97,42 @@ nodes:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/2d61dd07b20062062ea671b4d01873506103b67c0f7a4c3fb6cf4ee85585dcb8
     controlPlane: true
-    nameservers: *nameservers
     networkInterfaces:
-      - interface: bond0
-        bond:
-          mode: 802.3ad
-          miimon: 100
-          xmitHashPolicy: layer3+4
-          lacpRate: fast
-          updelay: 200
-          downdelay: 200
-          deviceSelectors:
-            - hardwareAddr: "54:b2:03:04:cd:*"
+      - deviceSelector:
+          hardwareAddr: "54:b2:03:04:cd:31"
+          physical: true
         dhcp: false
+        addresses:
+          - "10.1.0.6/24"
+        routes:
+          - network: "0.0.0.0/0"
+            gateway: "10.1.0.1"
+        mtu: 1500
+        vip:
+          ip: "10.1.0.117"
         vlans:
-          - vlanId: 10
-            dhcp: false
-            addresses:
-              - "10.1.0.6/24"
-            mtu: 1500
-            routes:
-              - network: "0.0.0.0/0"
-                gateway: "10.1.0.1"
-            vip:
-              ip: "10.1.0.117"
+        - *vlan10
+      # - interface: bond0
+      #   bond:
+      #     mode: 802.3ad
+      #     miimon: 100
+      #     xmitHashPolicy: layer3+4
+      #     lacpRate: fast
+      #     updelay: 200
+      #     downdelay: 200
+      #     deviceSelectors:
+      #       - hardwareAddr: "54:b2:03:04:cd:*"
+      #         physical: true
+      #   dhcp: false
+      #   routes:
+      #   - network: "0.0.0.0/0"
+      #     gateway: "10.1.0.1"
+      #   addresses:
+      #     - "10.1.0.6/24"
+      #   vip:
+      #     ip: "10.1.0.117"
+      #   vlans:
+      #   - *vlan10
 
   - hostname: "hydaelyn"
     ipAddress: "10.1.0.7"
@@ -125,31 +142,38 @@ nodes:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/9c1d1b442d73f96dcd04e81463eb20000ab014062d22e1b083e1773336bc1dd5
     controlPlane: false
-    nameservers: *nameservers
     networkInterfaces:
-      - interface: bond0
-        bond:
-          mode: 802.3ad
-          miimon: 100
-          xmitHashPolicy: layer3+4
-          lacpRate: fast
-          updelay: 200
-          downdelay: 200
-          deviceSelectors:
-            - hardwareAddr: "a0:ce:c8:31:92:3b"
-              physical: true
-            - hardwareAddr: "58:47:ca:71:64:3f"
-              physical: true
+      - deviceSelector:
+          hardwareAddr: "58:47:ca:71:64:3f"
+          physical: true
         dhcp: false
+        addresses:
+          - "10.1.0.7/24"
+        routes:
+          - network: "0.0.0.0/0"
+            gateway: "10.1.0.1"
+        mtu: 1500
         vlans:
-          - vlanId: 10
-            dhcp: false
-            addresses:
-              - "10.1.0.7/24"
-            mtu: 1500
-            routes:
-              - network: "0.0.0.0/0"
-                gateway: "10.1.0.1"
+        - *vlan10
+      # - interface: bond0
+      #   bond:
+      #     mode: 802.3ad
+      #     miimon: 100
+      #     xmitHashPolicy: layer3+4
+      #     lacpRate: fast
+      #     updelay: 200
+      #     downdelay: 200
+      #     deviceSelectors:
+      #       - hardwareAddr: "a0:ce:c8:31:92:3b"
+      #       - hardwareAddr: "58:47:ca:71:64:3f"
+      #   dhcp: false
+      #   routes:
+      #     - network: "0.0.0.0/0"
+      #       gateway: "10.1.0.1"
+      #   addresses:
+      #     - "10.1.0.7/24"
+      #   vlans:
+      #     - *vlan10
 
 # Global patches
 patches:
