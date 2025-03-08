@@ -26,7 +26,8 @@ spec:
     controller:
       service:
         annotations:
-          lbipam.cilium.io/ips: "10.1.0.21"
+          external-dns.alpha.kubernetes.io/hostname: &hostname internal.parsec.sh
+          lbipam.cilium.io/ips: "10.1.10.21"
         externalTrafficPolicy: Cluster
       ingressClassResource:
         name: internal
@@ -71,7 +72,8 @@ spec:
           namespaceSelector:
             any: true
       extraArgs:
-        default-ssl-certificate: cert-manager/${SECRET_DOMAIN/./-}-production-tls
+        default-ssl-certificate: cert-manager/parsec.sh-production-tls
+        publish-status-address: *hostname
       resources:
         requests:
           cpu: 100m
