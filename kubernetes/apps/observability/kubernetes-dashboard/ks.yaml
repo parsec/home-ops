@@ -11,7 +11,7 @@ spec:
       app.kubernetes.io/name: *app
   dependsOn:
     - name: cert-manager
-      namespace: cert-maanger
+      namespace: cert-manager
     - name: metrics-server
       namespace: kube-system
   path: ./kubernetes/apps/observability/kubernetes-dashboard/app
