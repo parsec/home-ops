@@ -28,31 +28,52 @@ nodes:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/582f7052afa259bd6ec06c800145292c496bb1a5332d9ca54f224e25507c3437
     controlPlane: true
+    nameservers: &nameservers ["1.1.1.1","1.0.0.1"]
     networkInterfaces:
-      - deviceSelector:
-          hardwareAddr: "e0:07:1b:64:10:d0"
+      - interface: br0
         dhcp: false
         addresses:
           - "10.1.0.4/24"
+        bridge:
+          stp:
+            enabled: true
+          interfaces: [bond0]
         routes:
           - network: "0.0.0.0/0"
             gateway: "10.1.0.1"
-        mtu: 1500
         vip:
           ip: "10.1.0.117"
+      - interface: bond0
+        bond:
+          mode: active-backup
+          miimon: 100
+          primaryReselect: better
+          updelay: 200
+          downdelay: 200
+          deviceSelectors:
+            - hardwareAddr: "e0:07:1b:64:10:*"
+              physical: true
+        dhcp: false
+      - deviceSelector:
+          hardwareAddr: "e0:07:1b:64:10:d0"
+          physical: true
+        ignore: true
     patches:
       - "@./patches/venat/gpu-worker-patch.yaml"
+
   - hostname: "emet-selch"
     ipAddress: "10.1.0.5"
     installDiskSelector:
-      wwid: "TPBF231017005030293"
+      model: "TEAM T253512GB"
     machineSpec:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/2d61dd07b20062062ea671b4d01873506103b67c0f7a4c3fb6cf4ee85585dcb8
     controlPlane: true
+    nameservers: *nameservers
     networkInterfaces:
       - deviceSelector:
-          hardwareAddr: "7c:69:f6:8f:bd:02"
+          hardwareAddr: "e0:07:1b:70:18:40"
+          physical: true
         dhcp: false
         addresses:
           - "10.1.0.5/24"
@@ -62,6 +83,7 @@ nodes:
         mtu: 1500
         vip:
           ip: "10.1.0.117"
+
   - hostname: "hythlodaeus"
     ipAddress: "10.1.0.6"
     installDiskSelector:
@@ -70,36 +92,64 @@ nodes:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/2d61dd07b20062062ea671b4d01873506103b67c0f7a4c3fb6cf4ee85585dcb8
     controlPlane: true
+    nameservers: *nameservers
     networkInterfaces:
-      - deviceSelector:
-          hardwareAddr: "54:b2:03:04:cd:31"
+      - interface: bond0
+        bond:
+          mode: 802.3ad
+          miimon: 100
+          xmitHashPolicy: layer3+4
+          lacpRate: fast
+          updelay: 200
+          downdelay: 200
+          deviceSelectors:
+            - hardwareAddr: "54:b2:03:04:cd:*"
         dhcp: false
-        addresses:
-          - "10.1.0.6/24"
-        routes:
-          - network: "0.0.0.0/0"
-            gateway: "10.1.0.1"
-        mtu: 1500
-        vip:
-          ip: "10.1.0.117"
+        vlans:
+          - vlanId: 10
+            dhcp: false
+            addresses:
+              - "10.1.0.6/24"
+            mtu: 1500
+            routes:
+              - network: "0.0.0.0/0"
+                gateway: "10.1.0.1"
+            vip:
+              ip: "10.1.0.117"
+
   - hostname: "hydaelyn"
-    ipAddress: "10.1.0.1"
+    ipAddress: "10.1.0.7"
     installDiskSelector:
       wwid: "eui.002538b531a470f9"
     machineSpec:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/9c1d1b442d73f96dcd04e81463eb20000ab014062d22e1b083e1773336bc1dd5
     controlPlane: false
+    nameservers: *nameservers
     networkInterfaces:
-      - deviceSelector:
-          hardwareAddr: "58:47:ca:71:64:3f"
+      - interface: bond0
+        bond:
+          mode: 802.3ad
+          miimon: 100
+          xmitHashPolicy: layer3+4
+          lacpRate: fast
+          updelay: 200
+          downdelay: 200
+          deviceSelectors:
+            - hardwareAddr: "a0:ce:c8:31:92:3b"
+              physical: true
+            - hardwareAddr: "58:47:ca:71:64:3f"
+              physical: true
         dhcp: false
-        addresses:
-          - "10.1.0.1/24"
-        routes:
-          - network: "0.0.0.0/0"
-            gateway: "10.1.0.1"
-        mtu: 1500
+        vlans:
+          - vlanId: 10
+            dhcp: false
+            addresses:
+              - "10.1.0.7/24"
+            mtu: 1500
+            routes:
+              - network: "0.0.0.0/0"
+                gateway: "10.1.0.1"
 
 # Global patches
 patches:
