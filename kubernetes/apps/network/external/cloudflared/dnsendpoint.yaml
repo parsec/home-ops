@@ -6,6 +6,6 @@ metadata:
   name: cloudflared
 spec:
   endpoints:
-    - dnsName: "external.${SECRET_DOMAIN}"
+    - dnsName: "external.parsec.sh"
       recordType: CNAME
       targets: ["29a5de74-37ae-4441-b762-474e61de26ba.cfargotunnel.com"]
