@@ -12,7 +12,9 @@ spec:
       app.kubernetes.io/name: *app
   dependsOn:
     - name: cloudnative-pg-cluster
+      namespace: flux-system
     - name: external-secrets-stores
+      namespace: flux-system
   path: ./kubernetes/apps/auth/lldap/app
   components:
     - ../../../../components/gatus/guarded
