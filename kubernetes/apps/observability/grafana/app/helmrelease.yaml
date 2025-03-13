@@ -272,7 +272,6 @@ spec:
       dashboards:
         enabled: true
         searchNamespace: ALL
-        labelValue: ""
         label: grafana_dashboard
         folderAnnotation: grafana_folder
         provider:
@@ -286,6 +285,9 @@ spec:
       - grafana-clock-panel
       - grafana-piechart-panel
       - grafana-worldmap-panel
+      - natel-discrete-panel
+      - pr0ps-trackmap-panel
+      - vonage-status-panel
     serviceMonitor:
       enabled: true
     ingress:
