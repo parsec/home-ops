@@ -3,7 +3,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: arc-home-cluster
+  name: &name home-ops-runner
 spec:
   interval: 30m
   chart:
@@ -26,7 +26,6 @@ spec:
   values:
     annotations:
       reloader.stakater.com/auto: "true"
-    runnerScaleSetName: arc-runner-set-home-cluster
     githubConfigUrl: https://github.com/parsec/home-ops
     githubConfigSecret: actions-runner-secret
     minRunners: 1
