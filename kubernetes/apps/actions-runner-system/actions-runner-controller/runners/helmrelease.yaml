@@ -42,25 +42,25 @@ spec:
       controllerServiceAccount:
         name: actions-runner-controller
         namespace: actions-runner-system
-      template:
-        spec:
-          containers:
-            - name: runner
-              image: ghcr.io/onedr0p/actions-runner:2.322.0@sha256:9db27092b7caab08b1dc08d5e639a3340f6e0d6ae2f91aaf93e740bd28ad9306
-              command: ["/home/runner/run.sh"]
-              env:
-                - name: ACTIONS_RUNNER_REQUIRE_JOB_CONTAINER
-                  value: "false"
-                - name: NODE
-                  valueFrom:
-                    fieldRef:
-                      fieldPath: status.hostIP
-              volumeMounts:
-                - mountPath: /var/run/secrets/talos.dev
-                  name: talos
-                  readOnly: true
-          serviceAccountName: *name
-          volumes:
-            - name: talos
-              secret:
-                secretName: *name
+    template:
+      spec:
+        containers:
+          - name: runner
+            image: ghcr.io/onedr0p/actions-runner:2.322.0@sha256:9db27092b7caab08b1dc08d5e639a3340f6e0d6ae2f91aaf93e740bd28ad9306
+            command: ["/home/runner/run.sh"]
+            env:
+              - name: ACTIONS_RUNNER_REQUIRE_JOB_CONTAINER
+                value: "false"
+              - name: NODE
+                valueFrom:
+                  fieldRef:
+                    fieldPath: status.hostIP
+            volumeMounts:
+              - mountPath: /var/run/secrets/talos.dev
+                name: talos
+                readOnly: true
+        serviceAccountName: *name
+        volumes:
+          - name: talos
+            secret:
+              secretName: *name
