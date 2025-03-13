@@ -31,13 +31,14 @@ spec:
     minRunners: 1
     maxRunners: 3
     containerMode:
-      type: kubernetes
-      kubernetesModeWorkVolumeClaim:
-        accessModes: ["ReadWriteOnce"]
-        storageClassName: openebs-hostpath
-        resources:
-          requests:
-            storage: 25Gi
+      type: dind
+      # type: kubernetes
+      # kubernetesModeWorkVolumeClaim:
+      #   accessModes: ["ReadWriteOnce"]
+      #   storageClassName: openebs-hostpath
+      #   resources:
+      #     requests:
+      #       storage: 25Gi
     controllerServiceAccount:
       name: actions-runner-controller
       namespace: actions-runner-system
