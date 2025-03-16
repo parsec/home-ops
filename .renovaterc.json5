@@ -6,7 +6,8 @@
     ":automergeBranch",
     ":dependencyDashboard",
     ":disableRateLimiting",
-    ":semanticCommits"
+    ":semanticCommits",
+    "helpers:pinGitHubActionDigests"
   ],
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
@@ -32,14 +33,6 @@
     "fileMatch": ["(^|/)[\\w-]*requirements(-\\w+)?\\.(txt|pip)(?:\\.j2)?$"]
   },
   "packageRules": [
-    {
-      "description": ["Auto-merge GitHub Actions for minor and patch"],
-      "matchManagers": ["github-actions"],
-      "automerge": true,
-      "automergeType": "branch",
-      "ignoreTests": true,
-      "matchUpdateTypes": ["minor", "patch"]
-    },
     {
       "description": ["Flux Operator Group"],
       "groupName": "Flux Operator",
