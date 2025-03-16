@@ -18,7 +18,7 @@
           default: latest
           required: false
     schedule:
-      - cron: "0 * * * *"
+      - cron: "0 * * * MON"
     push:
       branches: ["main"]
       paths:
