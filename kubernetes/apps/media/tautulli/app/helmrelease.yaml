@@ -36,8 +36,8 @@ spec:
         containers:
           main:
             image:
-              repository: ghcr.io/home-operations/tautulli
-              tag: rolling@sha256:eb003c796104556ae3ac5e84892641801688c1b0ec7a25eec6a8aba9a0d60c95
+              repository: ghcr.io/onedr0p/tautulli
+              tag: 2.15.1@sha256:2d5a1bce27a8e29e287aec1735001e68fc23dea08806c7124587cdbfaf0ddcff
             env:
               TZ: America/New_York
             probes:

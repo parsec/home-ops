@@ -39,8 +39,8 @@ spec:
         containers:
           main:
             image:
-              repository: ghcr.io/home-operations/prowlarr
-              tag: rolling@sha256:951fd4f076a117effe552e5f7b7811b5ef75f6019fc64534008356e9b7ab88be
+              repository: ghcr.io/onedr0p/prowlarr-develop
+              tag: 1.31.2.4975@sha256:fa776c72b6cdd900f36df88a8c3980ac91da16830157ae19eb1c044e2c09e2a7
             env:
               # https://github.com/Radarr/Radarr/issues/7030#issuecomment-1039689518
               # https://github.com/dotnet/runtime/issues/9336

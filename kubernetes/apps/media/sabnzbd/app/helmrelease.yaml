@@ -36,8 +36,8 @@ spec:
         containers:
           main:
             image:
-              repository: ghcr.io/home-operations/sabnzbd
-              tag: rolling@sha256:b26d5abc3e2572e35f251abf2d8ec6ee657599e5f69238c39bd41847a4d0016e
+              repository: ghcr.io/onedr0p/sabnzbd
+              tag: 4.4.1@sha256:b7380cd5a93a0a232c5ce25803531b1575453953e99de4e6b8a1398e73442e5b
             env:
               TZ: America/New_York
               SABNZBD__PORT: &port 80
