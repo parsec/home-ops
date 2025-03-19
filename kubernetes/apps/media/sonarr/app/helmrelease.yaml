@@ -43,7 +43,7 @@ spec:
           main:
             image:
               repository: ghcr.io/home-operations/sonarr
-              tag: rolling@sha256:0169c421055790ef8bd9b5c2807663bb487f56daf1f602a20612a0257c491462
+              tag: rolling@sha256:dbd17368d7c24511d5e3a0dacb11d699d52457d5cf3eb48c9b46fc0e3ac6c4eb
             env:
               # https://github.com/Radarr/Radarr/issues/7030#issuecomment-1039689518
               # https://github.com/dotnet/runtime/issues/9336

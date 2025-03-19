@@ -31,7 +31,7 @@ spec:
     image:
       # https://github.com/backube/volsync/issues/828
       repository: &image ghcr.io/home-operations/volsync
-      tag: &tag v0.12.0@sha256:1915128df669d5cbb1d0e4819b7905e8937874ada1377e56c69b34a89abf90ef
+      tag: &tag v0.12.0@sha256:95a572c6a9937ac8e7f1e7c82466e6ab4cf5914078ddbef27d11293e4659716f
     rclone:
       repository: *image
       tag: *tag
