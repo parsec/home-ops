@@ -42,8 +42,8 @@ spec:
         containers:
           main:
             image:
-              repository: ghcr.io/onedr0p/radarr
-              tag: 5.19.3.9730@sha256:7218cd42b646bb773a2c683b95860c51103c3ca7e0b9171b4bc549b95ddc6896
+              repository: ghcr.io/home-operations/radarr
+              tag: rolling@sha256:ae48a7e3060a849dbe266084cad892b324155359242dcaaeddb6ba11ea70f3e1
             env:
               # https://github.com/Radarr/Radarr/issues/7030#issuecomment-1039689518
               # https://github.com/dotnet/runtime/issues/9336
