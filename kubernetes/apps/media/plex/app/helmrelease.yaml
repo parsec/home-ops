@@ -39,7 +39,7 @@ spec:
           main:
             image:
               repository: ghcr.io/home-operations/plex
-              tag: rolling@sha256:1c35e44828531320f4fccd980da5a3d0da08a438f1c89841d8be97cfefe66e63
+              tag: rolling@sha256:59286dc90c7a0bab47602f6dbbb07ab48f4d919f2a5011932fbc76190654da2c
             env:
               TZ: America/New_York
               NVIDIA_DRIVER_CAPABILITIES: all
