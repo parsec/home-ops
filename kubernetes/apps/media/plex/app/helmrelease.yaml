@@ -38,8 +38,8 @@ spec:
         containers:
           main:
             image:
-              repository: ghcr.io/home-operations/plex
-              tag: rolling@sha256:59286dc90c7a0bab47602f6dbbb07ab48f4d919f2a5011932fbc76190654da2c
+              repository: ghcr.io/onedr0p/plex-beta
+              tag: 1.41.3.9314-a0bfb8370
             env:
               TZ: America/New_York
               NVIDIA_DRIVER_CAPABILITIES: all
