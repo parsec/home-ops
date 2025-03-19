@@ -37,7 +37,7 @@ spec:
           main:
             image:
               repository: ghcr.io/home-operations/sabnzbd
-              tag: rolling@sha256:b26d5abc3e2572e35f251abf2d8ec6ee657599e5f69238c39bd41847a4d0016e
+              tag: rolling@sha256:95a8393d30e360297acee2dac8791e2787355d2880543200ce552f54ebab5c52
             env:
               TZ: America/New_York
               SABNZBD__PORT: &port 80
