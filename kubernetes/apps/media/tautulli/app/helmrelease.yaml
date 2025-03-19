@@ -37,7 +37,7 @@ spec:
           main:
             image:
               repository: ghcr.io/home-operations/tautulli
-              tag: rolling@sha256:eb003c796104556ae3ac5e84892641801688c1b0ec7a25eec6a8aba9a0d60c95
+              tag: rolling@sha256:48029409b1a98d2e7564fdf2fc7eced0c9355533fd7a20a3167b964305f1ab0e
             env:
               TZ: America/New_York
             probes:
