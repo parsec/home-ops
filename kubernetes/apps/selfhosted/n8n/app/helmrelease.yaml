@@ -74,7 +74,7 @@ spec:
       app:
         className: internal
         annotations:
-          external-dns.alpha.kubernetes.io/target: *hostName
+          external-dns.alpha.kubernetes.io/target: internal.parsec.sh
         hosts:
           - host: *hostName
             paths:
