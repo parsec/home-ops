@@ -74,16 +74,16 @@ spec:
       app:
         className: internal
         annotations:
-          external-dns.alpha.kubernetes.io/target: n8n.parsec.sh
+          external-dns.alpha.kubernetes.io/target: *hostName
         hosts:
-          - host: &host n8n.parsec.sh
+          - host: *hostName
             paths:
               - path: /
                 service:
                   identifier: app
-                  port: http
+                  port: *port
         tls:
-          - hosts: [*host]
+          - hosts: [*hostName]
     # route:
     #   app:
     #     hostnames:
