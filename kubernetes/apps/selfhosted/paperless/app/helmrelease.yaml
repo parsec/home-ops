@@ -121,16 +121,29 @@ spec:
           paperless:
             app:
               - path: /data/nas
-
-    route:
+    ingress:
       app:
-        hostnames:
-          - paperless.parsec.sh
-        parentRefs:
-          - name: internal
-            namespace: kube-system
-            sectionName: https
-        rules:
-          - backendRefs:
-              - name: paperless
-                port: *port
+        className: internal
+        annotations:
+          external-dns.alpha.kubernetes.io/target: internal.parsec.sh
+        hosts:
+          - host: &host paperless.parsec.sh
+            paths:
+              - path: /
+                service:
+                  identifier: app
+                  port: http
+        tls:
+          - hosts: [*host]
+    # route:
+    #   app:
+    #     hostnames:
+    #       - paperless.parsec.sh
+    #     parentRefs:
+    #       - name: internal
+    #         namespace: kube-system
+    #         sectionName: https
+    #     rules:
+    #       - backendRefs:
+    #           - name: paperless
+    #             port: *port
