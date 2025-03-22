@@ -21,9 +21,9 @@ spec:
   wait: false
   dependsOn:
     - name: onepassword-connect
-      namespace: external-secrets
+      namespace: flux-system
     - name: volsync
-      namespace: storage
+      namespace: flux-system
   components:
     - ../../../../components/volsync
   postBuild:
