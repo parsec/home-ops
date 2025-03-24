@@ -69,7 +69,7 @@ spec:
       ops: "p4rsec"
       version: 1.20.1
       type: "AUTO_CURSEFORGE"
-      forgeVersion: "47.3.29"
+      forgeVersion: "47.4.0"
       spawnProtection: 0
       memory: 10G
       jvmOpts: "-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+UnlockDiagnosticVMOptions -XX:+AlwaysActAsServerClassMachine -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+UseNUMA -XX:AllocatePrefetchStyle=3 -XX:NmethodSweepActivity=1 -XX:ReservedCodeCacheSize=400M -XX:NonNMethodCodeHeapSize=12M -XX:ProfiledCodeHeapSize=194M -XX:NonProfiledCodeHeapSize=194M -XX:-DontCompileHugeMethods -XX:+PerfDisableSharedMem -XX:+UseFastUnorderedTimeStamps -XX:+UseCriticalJavaThreadPriority -XX:+EagerJVMCI -Dgraal.TuneInlinerExploration=1 -Dgraal.CompilerConfiguration=enterprise -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true"
@@ -83,7 +83,7 @@ spec:
         apiKey:
           existingSecret: atm9-secret
           secretKey: CF_API_KEY
-        pageUrl: "https://www.curseforge.com/minecraft/modpacks/all-the-mods-9/files/6174211"
+        pageUrl: "https://www.curseforge.com/minecraft/modpacks/all-the-mods-9/files/6322046"
       serviceType: LoadBalancer
       servicePort: 25595
       loadBalancerIP: 10.1.10.103
