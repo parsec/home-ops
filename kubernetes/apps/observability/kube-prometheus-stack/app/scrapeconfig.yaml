@@ -20,7 +20,7 @@ metadata:
 spec:
   staticConfigs:
     - targets:
-        - zodiark.parsec.sh:9100
+        - 10.1.0.3:9100
   metricsPath: /metrics
   relabelings:
     - action: replace
@@ -35,7 +35,7 @@ metadata:
 spec:
   staticConfigs:
     - targets:
-        - zodiark.parsec.sh:9633
+        - 10.1.0.3:9633
   metricsPath: /metrics
   relabelings:
     - action: replace

@@ -11,4 +11,4 @@ spec:
   targets:
     staticConfig:
       static:
-        - zodiark.parsec.sh
+        - 10.1.0.3
