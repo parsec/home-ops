@@ -30,7 +30,7 @@ nodes:
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
-          hardwareAddr: "e0:07:1b:64:10:d0"
+          hardwareAddr: "e0:07:1b:64:10:d1"
           physical: true
         dhcp: false
         addresses:
