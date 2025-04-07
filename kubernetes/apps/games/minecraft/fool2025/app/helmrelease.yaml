@@ -39,7 +39,7 @@ spec:
     resources:
       requests:
         memory: 6Gi
-        cpu: 4
+        cpu: .5
       # limits:
       #  memory: 10Gi
     podSecurityContext:
