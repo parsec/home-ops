@@ -80,7 +80,7 @@ spec:
       woldSaveName: aprilfools2025
       serviceType: LoadBalancer
       servicePort: 25596
-      loadBalancerIP: 10.1.10.104
+      loadBalancerIP: 10.1.10.105
     extraEnv:
       ALLOW_FLIGHT: true
       GUI: false
