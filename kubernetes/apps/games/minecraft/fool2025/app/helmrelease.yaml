@@ -38,7 +38,7 @@ spec:
       org.democratic-csi.topology/node: "hydaelyn"
     resources:
       requests:
-        memory: 10Gi
+        memory: 6Gi
         cpu: 4
       # limits:
       #  memory: 10Gi
