@@ -85,3 +85,4 @@ spec:
     substitute:
       APP: *app
       VOLSYNC_CAPACITY: 25Gi
+      VOLSYNC_CLAIM: fool2025-data

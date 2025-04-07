@@ -88,7 +88,7 @@ spec:
     persistence:
       dataDir:
         enabled: true
-        existingClaim: fool2025
+        existingClaim: fool2025-data
         readOnly: false
         globalMounts:
           - path: /data
