@@ -26,7 +26,7 @@ nodes:
       wwid: "naa.5002538f54711aa4"
     machineSpec:
       secureboot: false
-    talosImageURL: factory.talos.dev/installer/e770ae054f99369321899aef8b1fa5b71ef7075f24d3663da1a115eaac46e537
+    talosImageURL: factory.talos.dev/installer/f31a9830aa99bde462c9e9e2f24480528d7a29d346013c306200b73a4ad5e331
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
@@ -46,53 +46,20 @@ nodes:
             vlanId: 10
             dhcp: false
             mtu: 1500
-      # - interface: br0
-      #   dhcp: false
-      #   addresses:
-      #     - "10.1.0.4/24"
-      #   bridge:
-      #     stp:
-      #       enabled: true
-      #     interfaces: [bond0]
-      #   routes:
-      #     - network: "0.0.0.0/0"
-      #       gateway: "10.1.0.1"
-      #   vip:
-      #     ip: "10.1.0.117"
-      #   vlans:
-      #     - &vlan10
-      #       vlanId: 10
-      #       dhcp: false
-      #       mtu: 1500
-      # - interface: bond0
-      #   bond:
-      #     mode: active-backup
-      #     miimon: 100
-      #     primaryReselect: better
-      #     updelay: 200
-      #     downdelay: 200
-      #     deviceSelectors:
-      #       - hardwareAddr: "e0:07:1b:64:10:*"
-      #         physical: true
-      #   dhcp: false
-      # - deviceSelector:
-      #     hardwareAddr: "a0:36:9f:09:0b:3c"
-      #     physical: true
-      #   ignore: true
     patches:
       - "@./patches/venat/gpu-worker-patch.yaml"
 
   - hostname: "emet-selch"
     ipAddress: "10.1.0.5"
     installDiskSelector:
-      size: "512110190592"
+      wwid: "naa.55cd2e404c292e7b"
     machineSpec:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/2d61dd07b20062062ea671b4d01873506103b67c0f7a4c3fb6cf4ee85585dcb8
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
-          hardwareAddr: "7c:69:f6:8f:bd:02"
+          hardwareAddr: "e0:07:1b:70:18:41"
           physical: true
         dhcp: false
         addresses:
@@ -109,10 +76,10 @@ nodes:
   - hostname: "hythlodaeus"
     ipAddress: "10.1.0.6"
     installDiskSelector:
-      wwid: "nvme.c0a9-323032304532413245324138-4354353030503253534438-00000001"
+      serial: "2020E2A2E2A8"
     machineSpec:
       secureboot: false
-    talosImageURL: factory.talos.dev/installer/2d61dd07b20062062ea671b4d01873506103b67c0f7a4c3fb6cf4ee85585dcb8
+    talosImageURL: factory.talos.dev/installer/f55a24bb1c9cf3fe5abb491e2a4e4879a7eee920fa511cb2c18164ceac3a495e
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
@@ -129,27 +96,6 @@ nodes:
           ip: "10.1.0.117"
         vlans:
         - *vlan10
-      # - interface: bond0
-      #   bond:
-      #     mode: 802.3ad
-      #     miimon: 100
-      #     xmitHashPolicy: layer3+4
-      #     lacpRate: fast
-      #     updelay: 200
-      #     downdelay: 200
-      #     deviceSelectors:
-      #       - hardwareAddr: "54:b2:03:04:cd:*"
-      #         physical: true
-      #   dhcp: false
-      #   routes:
-      #   - network: "0.0.0.0/0"
-      #     gateway: "10.1.0.1"
-      #   addresses:
-      #     - "10.1.0.6/24"
-      #   vip:
-      #     ip: "10.1.0.117"
-      #   vlans:
-      #   - *vlan10
 
   - hostname: "hydaelyn"
     ipAddress: "10.1.0.7"
@@ -157,7 +103,7 @@ nodes:
       wwid: "eui.002538b531a470f9"
     machineSpec:
       secureboot: false
-    talosImageURL: factory.talos.dev/installer/9c1d1b442d73f96dcd04e81463eb20000ab014062d22e1b083e1773336bc1dd5
+    talosImageURL: factory.talos.dev/installer/5b3b9c7c93b1e332700ce6dccb34f32ef4824787afa617b87391119bebe2b05b
     controlPlane: false
     networkInterfaces:
       - deviceSelector:
@@ -172,25 +118,6 @@ nodes:
         mtu: 1500
         vlans:
         - *vlan10
-      # - interface: bond0
-      #   bond:
-      #     mode: 802.3ad
-      #     miimon: 100
-      #     xmitHashPolicy: layer3+4
-      #     lacpRate: fast
-      #     updelay: 200
-      #     downdelay: 200
-      #     deviceSelectors:
-      #       - hardwareAddr: "a0:ce:c8:31:92:3b"
-      #       - hardwareAddr: "58:47:ca:71:64:3f"
-      #   dhcp: false
-      #   routes:
-      #     - network: "0.0.0.0/0"
-      #       gateway: "10.1.0.1"
-      #   addresses:
-      #     - "10.1.0.7/24"
-      #   vlans:
-      #     - *vlan10
 
 # Global patches
 patches:
