@@ -23,7 +23,7 @@ spec:
   volumes:
     - name: config
       persistentVolumeClaim:
-        claimName: atm9-reloaded
+        claimName: atm9-data
     - name: config-stuff
       nfs:
         server: 10.1.0.3

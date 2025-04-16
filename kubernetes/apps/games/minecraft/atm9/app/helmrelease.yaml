@@ -3,7 +3,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: atm9
+  name: atm9-reloaded
 spec:
   interval: 30m
   timeout: 15m
@@ -139,7 +139,7 @@ spec:
     persistence:
       dataDir:
         enabled: true
-        existingClaim: atm9-data
+        existingClaim: atm9-reloaded-data
         readOnly: false
         globalMounts:
           - path: /data
