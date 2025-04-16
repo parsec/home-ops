@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: gatus
+  name: gatus-data
 spec:
   accessModes: ["ReadWriteOnce"]
   resources:
