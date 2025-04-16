@@ -90,7 +90,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: *app
+        existingClaim: lidarr-data
         globalMounts:
           - path: /config
       music:

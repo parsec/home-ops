@@ -106,6 +106,6 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: prowlarr
+        existingClaim: prowlarr-data
       tmp:
         type: emptyDir

@@ -65,7 +65,7 @@ spec:
 
     persistence:
       data:
-        existingClaim: n8n
+        existingClaim: n8n-data
         advancedMounts:
           n8n:
             app:
