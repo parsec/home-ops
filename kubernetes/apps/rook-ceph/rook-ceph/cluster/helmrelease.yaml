@@ -78,13 +78,13 @@ spec:
         nodes:
           - name: venat
             devices:
-              - name: /dev/disk/by-id/ata-TEAM_T2531TB_TPBF2303010010301171
+              - name: /dev/disk/by-id/ata-INTEL_SSDSC2BX012T4_BTHC626306FE1P2OGN
           - name: emet-selch
             devices:
-              - name: /dev/disk/by-id/ata-TEAM_T2531TB_TPBF2303010010301157
+              - name: /dev/disk/by-id/ata-INTEL_SSDSC2BX012T4_BTHC626306FC1P2OGN
           - name: hythlodaeus
             devices:
-              - name: /dev/disk/by-id/nvme-CT500P2SSD8_2020E2A2E2A8
+              - name: /dev/disk/by-id/ata-WDC_WDS100T2B0B-00YS70_20031D801590
           - name: hydaelyn
             devices:
               - name: /dev/disk/by-id/nvme-CT2000P1SSD8_20392AB1904B
