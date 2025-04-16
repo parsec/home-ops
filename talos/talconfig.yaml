@@ -24,10 +24,6 @@ nodes:
     ipAddress: "10.1.0.4"
     installDiskSelector:
       wwid: "naa.5002538f54711aa4"
-    machineDisks:
-      - device: /dev/disk/by-id/ata-Samsung_SSD_870_EVO_1TB_S75BNL0X728819F
-        partitions:
-          - mountpoint: /var/mnt/extra
     machineSpec:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/f31a9830aa99bde462c9e9e2f24480528d7a29d346013c306200b73a4ad5e331
@@ -57,10 +53,6 @@ nodes:
     ipAddress: "10.1.0.5"
     installDiskSelector:
       wwid: "naa.55cd2e404c292e7b"
-    machineDisks:
-      - device: /dev/disk/by-id/ata-INTEL_SSDSC2BX480G4_BTHC630204HY480MGN
-        partitions:
-          - mountpoint: /var/mnt/extra
     machineSpec:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/2d61dd07b20062062ea671b4d01873506103b67c0f7a4c3fb6cf4ee85585dcb8
@@ -85,10 +77,6 @@ nodes:
     ipAddress: "10.1.0.6"
     installDiskSelector:
       serial: "2020E2A2E2A8"
-    machineDisks:
-      - device: /dev/disk/by-id/nvme-CT500P2SSD8_2020E2A2E2A8
-        partitions:
-          - mountpoint: /var/mnt/extra
     machineSpec:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/f55a24bb1c9cf3fe5abb491e2a4e4879a7eee920fa511cb2c18164ceac3a495e
@@ -113,10 +101,6 @@ nodes:
     ipAddress: "10.1.0.7"
     installDiskSelector:
       wwid: "eui.002538b531a470f9"
-    machineDisks:
-      - device: /dev/disk/by-id/nvme-Samsung_SSD_980_PRO_500GB_S5NYNL0W501852A
-        partitions:
-          - mountpoint: /var/mnt/extra
     machineSpec:
       secureboot: false
     talosImageURL: factory.talos.dev/installer/5b3b9c7c93b1e332700ce6dccb34f32ef4824787afa617b87391119bebe2b05b
