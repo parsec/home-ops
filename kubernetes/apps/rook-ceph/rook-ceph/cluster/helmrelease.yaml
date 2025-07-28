@@ -53,7 +53,7 @@ spec:
           osd_class_update_on_start: "false" # quote
           device_failure_prediction_mode: local # requires mgr module
       cephVersion:
-        image: docker.io/rkachach/ceph:v18.2.1_patched_v1
+        image: quay.io/ceph/ceph@sha256:1b9158ce28975f95def6a0ad459fa19f1336506074267a4b47c1bd914a00fec0
       network:
         provider: host
         connections:
