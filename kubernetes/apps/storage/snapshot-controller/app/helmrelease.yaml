@@ -27,9 +27,6 @@ spec:
     keepHistory: false
   values:
     controller:
-      args:
-        featureGates:
-          CSIVolumeGroupSnapshot: true
       serviceMonitor:
         create: true
     webhook:
