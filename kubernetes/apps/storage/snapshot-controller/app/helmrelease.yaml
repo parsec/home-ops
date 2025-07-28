@@ -28,8 +28,8 @@ spec:
   values:
     controller:
       args:
-        featureGates: CSIVolumeGroupSnapshot
-        CSIVolumeGroupSnapshot: true
+        featureGates:
+          CSIVolumeGroupSnapshot: true
       serviceMonitor:
         create: true
     webhook:
