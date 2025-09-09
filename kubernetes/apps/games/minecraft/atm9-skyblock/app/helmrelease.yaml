@@ -76,9 +76,10 @@ spec:
       gameMode: survival
       maxTickTime: -1
       difficulty: normal
+      levelType: skyblock
       pvp: true
       motd: "Welcome to All the Mods 9! To the skies!"
-      woldSaveName: atm9
+      woldSaveName: atm9sky
       autoCurseForge:
         apiKey:
           existingSecret: atm9-skyblock-secret
