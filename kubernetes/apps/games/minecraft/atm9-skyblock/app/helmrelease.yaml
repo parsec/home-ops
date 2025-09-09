@@ -76,7 +76,7 @@ spec:
       gameMode: survival
       maxTickTime: -1
       difficulty: normal
-      levelType: skyblock
+      levelType: skyblockbuilder\:skyblock
       pvp: true
       motd: "Welcome to All the Mods 9! To the skies!"
       woldSaveName: atm9sky
