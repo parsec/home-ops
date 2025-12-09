@@ -65,7 +65,7 @@ spec:
             paths:
               - path: /
                 service:
-                  name: main
+                  name: app
                   port: *port
         tls:
           - hosts:
