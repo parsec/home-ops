@@ -15,6 +15,7 @@ spec:
   path: ./kubernetes/apps/media/bazarr/app
   components:
     - ../../../../components/gatus/guarded
+    - ../../../../components/volsync
   prune: true
   sourceRef:
     kind: GitRepository
