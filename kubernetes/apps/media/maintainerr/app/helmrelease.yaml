@@ -48,7 +48,7 @@ spec:
                   - ALL
     persistence:
       config:
-        existingClaim: maintainerr
+        existingClaim: maintainerr-data
         advancedMounts:
           maintainerr:
             app:
