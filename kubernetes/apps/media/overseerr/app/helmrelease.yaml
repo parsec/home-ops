@@ -36,8 +36,8 @@ spec:
         containers:
           main:
             image:
-              repository: ghcr.io/sct/overseerr
-              tag: 1.34.0@sha256:4f38f58d68555004d3f487a4c5cbe2823e6a0942d946a25a2d9391d8492240a4
+              repository: ghcr.io/seerr-team/seerr
+              tag: v3.2.0@sha256:97763baa8e3cd7ec2d40ceadae13d77f91b9626118e6fcf92fc89e7c4f49952c
             env:
               TZ: America/New_York
               LOG_LEVEL: "info"
