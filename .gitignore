@@ -1,6 +1,8 @@
 # Secrets
 *.pub
 *.key
+*.csr
+*.crt
 *.decrypted~*.yaml
 /age.key
 /cloudflare-tunnel.json
