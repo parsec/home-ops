@@ -26,7 +26,7 @@
           uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
         - name: Setup Homebrew
-          uses: Homebrew/actions/setup-homebrew@master
+          uses: Homebrew/actions/setup-homebrew@c8884c2ac585f47e5cba71e5025e52a7738f2a28 # master
 
         - name: Setup Workflow Tools
           run: brew install kubectl uv
@@ -37,7 +37,7 @@
             python-version: 3.14.x
 
         - name: Setup Node
-          uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
+          uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
           with:
             node-version: 24.x
 
@@ -48,7 +48,7 @@
           run: curl -fsSL https://raw.githubusercontent.com/datreeio/CRDs-catalog/43e4407642d4c37683c88711f37caa6c9c20ca40/Utilities/crd-extractor.sh | bash
 
         - name: Publish Schemas
-          uses: cloudflare/wrangler-action@da0e0dfe58b7a431659754fdf3f186c529afbe65 # v3
+          uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4
           with:
             apiToken: "${{ secrets.CLOUDFLARE_API_TOKEN }}"
             accountId: "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}"
