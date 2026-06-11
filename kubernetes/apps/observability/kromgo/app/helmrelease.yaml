@@ -97,19 +97,19 @@ spec:
           valueExpr: 'result == 1.0 ? "up" : "down"'
           colorExpr: 'result == 1.0 ? "brightgreen" : "red"'
           icon: si:prometheus
-      ingress:
-        enabled: true
-        className: external
-        annotations:
-          external-dns.alpha.kubernetes.io/target: external.parsec.sh
-          nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    ingress:
+      enabled: true
+      className: external
+      annotations:
+        external-dns.alpha.kubernetes.io/target: external.parsec.sh
+        nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+      hosts:
+        - host: &host "{{ .Release.Name }}.parsec.sh"
+          paths:
+            - path: /
+      tls:
         hosts:
-          - host: &host "{{ .Release.Name }}.parsec.sh"
-            paths:
-              - path: /
-        tls:
-          hosts:
-            - *host
+          - *host
     resources:
       requests:
         cpu: 10m
