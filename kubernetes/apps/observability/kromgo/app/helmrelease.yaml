@@ -108,8 +108,9 @@ spec:
           paths:
             - path: /
       tls:
-        hosts:
-          - *host
+        - secretName: kromgo-tls
+          hosts:
+            - *host
     resources:
       requests:
         cpu: 10m
