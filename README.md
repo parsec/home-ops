@@ -12,8 +12,8 @@ _... managed with Flux, Renovate and GitHub Actions_ :robot:
 
 <div align="center">
 
-[![Kubernetes](https://kromgo.parsec.sh/badges/kubernetes_version)](https://kubernetes.io/)
-[![Talos](https://kromgo.parsec.sh/badges/talos_version)](https://www.siderolabs.com/talos-linux)
+[![Kubernetes](https://kromgo.parsec.sh/badges/kubernetes_version)](https://kubernetes.io/)&nbsp;&nbsp;
+[![Talos](https://kromgo.parsec.sh/badges/talos_version)](https://www.siderolabs.com/talos-linux)&nbsp;&nbsp;
 [![Flux](https://kromgo.parsec.sh/badges/flux_version)](https://fluxcd.io)
 
 </div>
