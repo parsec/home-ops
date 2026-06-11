@@ -72,6 +72,9 @@ spec:
       app:
         enabled: true
         className: external
+        annotations:
+          external-dns.alpha.kubernetes.io/target: external.parsec.sh
+          nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
         hosts:
           - host: &host "{{ .Release.Name }}.parsec.sh"
             paths:
