@@ -12,22 +12,17 @@ _... managed with Flux, Renovate and GitHub Actions_ :robot:
 
 <div align="center">
 
-[![Kubernetes](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fonedr0p%2Fhome-ops%2Fmain%2Fkubernetes%2Fmain%2Fapps%2Ftools%2Fsystem-upgrade-controller%2Fplans%2Fserver.yaml&query=%24.spec.version&style=for-the-badge&logo=kubernetes&logoColor=white&label=%20)](https://k3s.io/)&nbsp;&nbsp;
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white&style=for-the-badge)](https://github.com/pre-commit/pre-commit)
-<!-- [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/parsec/home-cluster/Schedule%20-%20Renovate%20Helm%20Releases?label=renovate&logo=renovatebot&style=for-the-badge)](https://github.com/parsec/home-cluster/actions/workflows/renovate-schedule.yaml) -->
-[![Lines of code](https://img.shields.io/tokei/lines/github/parsec/home-ops?style=for-the-badge&color=brightgreen&label=lines&logo=codefactor&logoColor=white)](https://github.com/parsec/home-ops/graphs/contributors)
+[![Kubernetes](https://kromgo.parsec.sh/badges/kubernetes_version)](https://kubernetes.io/)
+[![Talos](https://kromgo.parsec.sh/badges/talos_version)](https://www.siderolabs.com/talos-linux)
+[![Flux](https://kromgo.parsec.sh/badges/flux_version)](https://fluxcd.io)
 
 </div>
-
----
 
 ## 📖 Overview
 
 This is my home cluster, built on [k8s](https://kubernetes.io), backed by [FluxCD](https://fluxcd.io/), [Terraform](https://terraform.io), [Ansible](https://www.ansible.com/), and GitOps/DevOps principles. This is a place for me to learn, and share everything I've learned along the way. Feel free to ask questions, submit improvements, and learn from all the hard work I've put into this!
 
 <!-- If you want to read about my adventures, I try to post about all my learning experiences on [my blog](https://blog.gitgud.sh). Come git gud with me! -->
-
----
 
 ## ⛵ Kubernetes
 
