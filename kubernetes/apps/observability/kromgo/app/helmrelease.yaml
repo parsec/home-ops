@@ -71,7 +71,7 @@ spec:
     ingress:
       app:
         enabled: true
-        className: internal
+        className: external
         hosts:
           - host: &host "{{ .Release.Name }}.parsec.sh"
             paths:
