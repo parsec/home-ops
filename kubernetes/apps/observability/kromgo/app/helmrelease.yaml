@@ -97,16 +97,19 @@ spec:
           valueExpr: 'result == 1.0 ? "up" : "down"'
           colorExpr: 'result == 1.0 ? "brightgreen" : "red"'
           icon: si:prometheus
-    httpRoute:
-      enabled: true
-      annotations:
-        gatus.home-operations.com/endpoint: |-
-          conditions: ["[STATUS] == 200"]
-      parentRefs:
-        - name: envoy-external
-          namespace: network
-      hostnames:
-        - "{{ .Release.Name }}.parsec.sh"
+      ingress:
+        enabled: true
+        className: external
+        annotations:
+          external-dns.alpha.kubernetes.io/target: external.parsec.sh
+          nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+        hosts:
+          - host: &host "{{ .Release.Name }}.parsec.sh"
+            paths:
+              - path: /
+        tls:
+          hosts:
+            - *host
     resources:
       requests:
         cpu: 10m
