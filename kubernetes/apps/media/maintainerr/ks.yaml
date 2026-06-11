@@ -14,7 +14,7 @@ spec:
   prune: true
   components:
     - ../../../../components/volsync
-    - ../../../../components/gatus/internal
+    - ../../../../components/gatus/guarded
   sourceRef:
     kind: GitRepository
     name: flux-system
