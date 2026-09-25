@@ -37,7 +37,7 @@ spec:
           main:
             image:
               repository: ghcr.io/seerr-team/seerr
-              tag: v3.2.0@sha256:97763baa8e3cd7ec2d40ceadae13d77f91b9626118e6fcf92fc89e7c4f49952c
+              tag: v3.4.1@sha256:f4768de5f616248d723e05891f3345a1402123775d03bf0890dbfedc0831bda1
             env:
               TZ: America/New_York
               LOG_LEVEL: "info"
