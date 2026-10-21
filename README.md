@@ -41,7 +41,6 @@ My cluster is [k8s](https://kubernetes.io/) provisioned overtop bare-metal [Talo
 - [external-secrets](https://github.com/external-secrets/external-secrets/): managed Kubernetes secrets using [1Password Connect](https://github.com/1Password/connect).
 - [ingress-nginx](https://github.com/kubernetes/ingress-nginx/): ingress controller for Kubernetes using NGINX as a reverse proxy and load balancer
 - [rook](https://github.com/rook/rook): distributed block storage for persistent storage
-- [sops](https://toolkit.fluxcd.io/guides/mozilla-sops/): managed secrets for Kubernetes, Ansible, and Terraform which are committed to Git
 <!-- - [spegel](https://github.com/XenitAB/spegel): stateless cluster local OCI registry mirror -->
 - [tf-controller](https://github.com/weaveworks/tf-controller): additional Flux component used to run Terraform from within a Kubernetes cluster.
 - [volsync](https://github.com/backube/volsync): backup and recovery of persistent volume claims
