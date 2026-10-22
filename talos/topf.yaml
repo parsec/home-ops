@@ -1,25 +1,57 @@
 ---
 
-talosVersion: "${talosVersion}"
-kubernetesVersion: "${kubernetesVersion}"
+talosVersion: v1.14.4
+kubernetesVersion: v1.37.1
 
 clusterName: "kubernetes"
-endpoint: https://10.1.0.117:6443
+clusterEndpoint: https://10.1.0.117:6443
+patchesDir: "./patches"
+
+secretsPath: secrets.yaml
 
 nodes:
   - host: "venat"
-    ip: 10.1.0.4
+    ip: "10.1.0.4"
     role: control-plane
-    schematicId: f31a9830aa99bde462c9e9e2f24480528d7a29d346013c306200b73a4ad5e331
-  - host: "emet-selch"
-    ip: 10.1.0.5
-    role: control-plane
-    schematicId: 2d61dd07b20062062ea671b4d01873506103b67c0f7a4c3fb6cf4ee85585dcb8
+    schematicId: "f31a9830aa99bde462c9e9e2f24480528d7a29d346013c306200b73a4ad5e331"
+    data:
+      installDisk: "/dev/disk/by-id/ata-Samsung_SSD_870_EVO_1TB_S75BNL0X728819F"
+      # installDiskSerial: ""
+      macAddr: "e0:07:1b:64:10:d1"
+      mtu: 1500
+      encryptDisk: false
+      kernelModules: []
+  # - host: "emet-selch"
+  #   ip: "10.1.0.5"
+  #   role: control-plane
+  #   schematicId: "2d61dd07b20062062ea671b4d01873506103b67c0f7a4c3fb6cf4ee85585dcb8"
+  #   data:
+  #     installDisk: ""
+  #     installDiskSerial: "naa.55cd2e404c292e7b"
+  #     macAddr: "e0:07:1b:70:18:41"
+  #     mtu: 1500
+  #     encryptDisk: false
+  #     kernelModules: []
   - host: "hythlodaeus"
-    ip: 10.1.0.6
+    ip: "10.1.0.6"
     role: control-plane
-    schematicId: f55a24bb1c9cf3fe5abb491e2a4e4879a7eee920fa511cb2c18164ceac3a495e
+    schematicId: "f55a24bb1c9cf3fe5abb491e2a4e4879a7eee920fa511cb2c18164ceac3a495e"
+    data:
+      installDisk: ""
+      installDiskSerial: "2020E2A2E2A8"
+      macAddr: "54:b2:03:04:cd:31"
+      mtu: 1500
+      encryptDisk: true
+      kernelModules: []
   - host: "hydaelyn"
-    ip: 10.1.0.7
+    ip: "10.1.0.7"
     role: control-plane
-    schematicId: 5b3b9c7c93b1e332700ce6dccb34f32ef4824787afa617b87391119bebe2b05b
+    schematicId: "5b3b9c7c93b1e332700ce6dccb34f32ef4824787afa617b87391119bebe2b05b"
+    data:
+      installDisk: ""
+      installDiskSerial: "eui.002538b531a470f9"
+      macAddr: "58:47:ca:71:64:3f"
+      mtu: 1500
+      encryptDisk: true
+      kernelModules: []
+
