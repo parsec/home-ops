@@ -12,6 +12,7 @@ tasks:
       - until topf kubeconfig | bash; do sleep 10; done
     preconditions:
       - test -f {{.TALOS_DIR}}/topf.yaml
+      - which topf
 
   apps:
     desc: Bootstrap apps into the Talos cluster
