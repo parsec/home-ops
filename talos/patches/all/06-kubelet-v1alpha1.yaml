@@ -1,0 +1,15 @@
+﻿machine:
+  kubelet:
+    extraMounts:
+      - destination: /var/openebs/local
+        type: bind
+        source: /var/openebs/local
+        options: ["bind", "rshared", "rw"]
+    extraConfig:
+      crashLoopBackOff:
+        maxContainerRestartPeriod: 60s
+      imageMaximumGCAge: 168h
+      maxParallelImagePulls: 3
+      serializeImagePulls: false
+      shutdownGracePeriod: 90s
+      shutdownGracePeriodCriticalPods: 60s

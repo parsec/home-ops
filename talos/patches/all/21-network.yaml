@@ -6,3 +6,7 @@ nameservers:
   - address: 1.0.0.1
 searchDomains:
   disableDefault: true
+hostDNS:
+  enabled: true
+  resolveMemberNames: true
+  forwardKubeDNSToHost: false
