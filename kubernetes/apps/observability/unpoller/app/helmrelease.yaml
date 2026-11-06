@@ -30,7 +30,7 @@ spec:
           app:
             image:
               repository: ghcr.io/unpoller/unpoller
-              tag: v5.6.3@sha256:64c59d7915555e0335a4603cf40297f20ebea1b5f8710748ff157f5ff421d715
+              tag: v5.9.4@sha256:bf2ef9706159c60f81a631030fb792e5ab809d872791ee5d0029a023212b48a7
             env:
               TZ: America/New_York
               UP_UNIFI_DEFAULT_ROLE: home-ops
